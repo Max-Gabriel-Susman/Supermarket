@@ -28,6 +28,8 @@ namespace Supermarket.API
         {
 
             services.AddControllers();
+
+            // we'll probably be getting rid of swagger gen
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Supermarket.API", Version = "v1" });
@@ -37,13 +39,14 @@ namespace Supermarket.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            if (env.IsDevelopment()) 
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Supermarket.API v1"));
             }
 
+            // apparently this pipeline parses json, but which middleware is doing it?
             app.UseHttpsRedirection();
 
             app.UseRouting();
