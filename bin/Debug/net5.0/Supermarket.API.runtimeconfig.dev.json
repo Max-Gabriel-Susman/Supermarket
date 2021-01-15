@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/Users/prometheus/.dotnet/store/|arch|/|tfm|",
+      "/Users/prometheus/.nuget/packages"
+    ]
+  }
+}

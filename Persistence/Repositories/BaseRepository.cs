@@ -11,4 +11,4 @@ namespace Supermarket.API.Persistence.Repositories
             _context = context;
         }
     }
-}
+} 
