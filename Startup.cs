@@ -9,7 +9,7 @@ using Supermarket.API.Domain.Repositories;
 using Supermarket.API.Domain.Services;
 using Supermarket.API.Persistence.Contexts;
 using Supermarket.API.Persistence.Repositories;
-using Supermarket.API.Services;
+// using Supermarket.API.Services;
 
 namespace Supermarket.API
 {
@@ -36,6 +36,7 @@ namespace Supermarket.API
             services.AddScoped<ICategoryService, CategoryService>();
             // services.AddAutoMapper();
             services.AddAutoMapper(typeof(Startup));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

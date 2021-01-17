@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Supermarket.API.Domain.Models;
 using Supermarket.API.Domain.Repositories;
 using Supermarket.API.Domain.Services;
+using Supermarket.API.Domain.Services.Communication;
 
 
 public class CategoryService : ICategoryService
@@ -31,7 +33,7 @@ public class CategoryService : ICategoryService
 			return new SaveCategoryResponse(category);
 		}
 		catch (Exception ex)
-		{
+		{	
 			// Do some logging stuff
 			return new SaveCategoryResponse($"An error occurred when saving the category: {ex.Message}");
 		}
